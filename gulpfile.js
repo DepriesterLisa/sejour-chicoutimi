@@ -20,7 +20,6 @@ gulp.task('serve', ['sass', 'js'], function() {
 
     gulp.watch('src/scss/**/*.scss', ['sass']);
     gulp.watch('src/js/**/*.js', ['js']);
-    gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
 // Configure CSS tasks.
@@ -31,7 +30,6 @@ gulp.task('sass', function () {
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
 });
 
 // Configure JS.
@@ -41,7 +39,6 @@ gulp.task('js', function() {
     .pipe(concat('app.js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream());
 });
 
 // Configure image stuff.
@@ -54,7 +51,6 @@ gulp.task('images', function () {
 gulp.task('watch', function () {
   gulp.watch('src/scss/**/*.scss', ['sass']);
   gulp.watch('src/js/**/*.js', ['js']);
-  gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['sass', 'js', 'images', 'serve']);
+gulp.task('default', ['sass', 'js', 'images']);
