@@ -40,12 +40,37 @@ a {
 	color: $dot-color;
 }
 
+section:not(.main-slider) {
+	@media #{$phone} {
+		padding: 0 40px;
+	}
+}
+
+
+$header-mobile-height: 96px;
+main {
+	@media #{$phone} {
+		padding-top: $header-mobile-height;
+	}
+}
+
 // HEADER
 .header-inner {
+	border-bottom: 1px solid #eaeaea;
 	@media #{$phone} {
-	  display: flex;
-	  align-items: center;
-	  padding: 0 20px;
+		display: flex;
+		align-items: center;
+		padding: 0 40px;
+		position: relative;
+		background-color: #fff;
+		z-index: 10;
+		max-height: $header-mobile-height;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		box-sizing: border-box;
 	}
 	.logo {
 		padding: 20px 0;
@@ -65,16 +90,18 @@ a {
 	width: 40px;
 	height: 30px;
 	position: relative;
+	cursor: pointer;
 	@media #{$phone} {
 	  display: block;
 	}
 	.bar {
 		$height-bar: 5px;
-		display: block;
-		height: $height-bar;
-		background-color: #000;
-		&:before {
-			content: "";
+		&.top {
+			display: block;
+			height: $height-bar;
+			background-color: #000;
+		}
+		&.middle {
 			position: absolute;
 			top: 0;
 			bottom: 0;
@@ -83,8 +110,7 @@ a {
 			background-color: #000;
 			height: $height-bar;
 		}
-		&:after {
-			content: "";
+		&.bottom {
 			position: absolute;
 			bottom: 0;
 			width: 100%;
@@ -96,7 +122,22 @@ a {
 
 .navigation {
 	font-size: 10px;
-	border-top: 1px solid #eaeaea;
+	@media #{$phone} {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #fff;
+		margin-top: $header-mobile-height;
+		transform: translateX(-100%);
+		z-index: 20;
+		transition: transform ease-out .4s;
+	}
+	&.open {
+		transform: translateX(0);
+		transition: transform ease-out .4s;
+	}
 	> ul {
 		display: flex;
 		max-width: 550px;
@@ -116,13 +157,18 @@ a {
 	li {
 		flex: 1;
 		@media #{$phone} {
-		  padding: 15px 0 15px 40px;
 		  + li {
 		  	border-top: 1px solid #eaeaea;
 		  }
 		}
 		&:hover {
 			color: $red-light;
+		}
+	}
+	a {
+		@media #{$phone} {
+			padding: 15px 0 15px 40px;
+			display: block;
 		}
 	}
 	.home-link {

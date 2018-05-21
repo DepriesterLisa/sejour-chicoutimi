@@ -10,4 +10,11 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
     })
 
+	var burgerMenu = document.querySelector('.burger-menu'),
+		navigation = document.querySelector('.navigation');
+
+    burgerMenu.addEventListener('click', function() {
+    	navigation.classList.toggle('open');
+    })
+
 });
