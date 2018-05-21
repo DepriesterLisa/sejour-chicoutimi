@@ -4,6 +4,8 @@ $dot-color: #f02e27;
 $red-dark: #dc3734;
 $red-light: #e35f5d;
 
+$phone: "only screen and (max-width : 768px)";
+
 * {
 	padding: 0;
 	margin: 0;
@@ -39,12 +41,56 @@ a {
 }
 
 // HEADER
-.logo {
-	padding: 20px 0;
-	max-width: 180px;
-	margin: auto;
-	> img { 
+.header-inner {
+	@media #{$phone} {
+	  display: flex;
+	  align-items: center;
+	  padding: 0 20px;
+	}
+	.logo {
+		padding: 20px 0;
+		max-width: 180px;
 		margin: auto;
+		@media #{$phone} {
+		  flex: 1;
+		}
+		> img { 
+			margin: auto;
+		}
+	}
+}
+
+.burger-menu {
+	display: none;
+	width: 40px;
+	height: 30px;
+	position: relative;
+	@media #{$phone} {
+	  display: block;
+	}
+	.bar {
+		$height-bar: 5px;
+		display: block;
+		height: $height-bar;
+		background-color: #000;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width: 100%;
+			background-color: #000;
+			height: $height-bar;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			background-color: #000;
+			height: $height-bar;
+		}
 	}
 }
 
@@ -60,9 +106,21 @@ a {
 		text-transform: uppercase;
 		font-size: 1.4em;
 		padding: 30px 0;
+		@media #{$phone} {
+		  flex-direction: column;
+		  max-width: none;
+		  padding: 0;
+		  text-align: left;
+		}
 	}
 	li {
 		flex: 1;
+		@media #{$phone} {
+		  padding: 15px 0 15px 40px;
+		  + li {
+		  	border-top: 1px solid #eaeaea;
+		  }
+		}
 		&:hover {
 			color: $red-light;
 		}
