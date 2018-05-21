@@ -112,6 +112,56 @@ a {
 	}
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+	background: none;
+	width: 46px;
+	height: 46px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	transition: all ease-out .4s;
+	&:hover {
+		background-color: #fff;
+		transition: all ease-out .4s;
+	}
+	&:before {
+		content: "";
+		width: 8px;
+		height: 12px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	}
+}
+
+.swiper-button-prev {
+	&:hover {
+		&:before {
+			background: url("../img/arrow-grey.svg") no-repeat;
+		}
+	}
+	&:before {
+		background: url("../img/arrow.svg") no-repeat;
+		transform: rotate(180deg);
+	}
+}
+
+.swiper-button-next {
+	&:hover {
+		&:before {
+			background: url("../img/arrow-grey.svg") no-repeat;
+		}
+	}
+	&:before {
+		background: url("../img/arrow.svg") no-repeat;
+	}
+}
+
+
+
 // INTRODUCTION
 .introduction {
 	text-align: center;
