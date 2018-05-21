@@ -1,7 +1,5 @@
-$color-light: #56a83a;
-$color-dark: #297334;
-$color-very-dark: #015b5b;
-$text-color: #3b2819;
+$text-color: #707070;
+$dot-color: #f02e27;
 
 * {
 	padding: 0;
@@ -9,6 +7,73 @@ $text-color: #3b2819;
 }
 
 body {
-	font-family: Arial, sans-serif;
+	font-family: 'Roboto', Arial, sans-serif;
+	color: $text-color;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+h1 {
+	font-size: 3em;
+	text-transform: uppercase;
+}
+
+p {
+	font-size: 1.4em;
+	line-height: 2em;
+}
+
+.dot {
+	color: $dot-color;
+}
+
+// HEADER
+.logo {
+	padding: 20px 0;
+	> img { 
+		margin: auto;
+	}
+}
+
+.navigation {
+	font-size: 10px;
+	border-top: 1px solid #eaeaea;
+	> ul {
+		display: flex;
+		max-width: 550px;
+		margin: auto;
+		list-style-type: none;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1.4em;
+		padding: 30px 0;
+	}
+	li {
+		flex: 1;
+	}
+}
+
+// MAIN SLIDER
+.main-slider {
+	padding: 25px 0;
+	background-color: #000;
+	> .swiper-container {
+		max-width: 1500px;
+	}
+}
+
+// INTRODUCTION
+.introduction {
+	text-align: center;
+	font-size: 10px;
+	max-width: 900px;
+	margin: auto;
+	margin-top: 50px;
+	> p {
+		margin-top: 40px;
+	}
 }
 
