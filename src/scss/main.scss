@@ -53,9 +53,9 @@ a {
 	text-decoration: underline;
 }
 
-section:not(.main-slider) {
+.main-section {
 	@media #{$phone} {
-		padding: 0 40px;
+		padding: 0 20px;
 	}
 }
 
