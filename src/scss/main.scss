@@ -4,6 +4,8 @@ $dot-color: #f02e27;
 $red-dark: #dc3734;
 $red-light: #e35f5d;
 
+$body-color: #f7f5f5;
+
 $phone: "only screen and (max-width : 768px)";
 
 * {
@@ -14,6 +16,7 @@ $phone: "only screen and (max-width : 768px)";
 body {
 	font-family: 'Roboto', Arial, sans-serif;
 	color: $text-color;
+	background-color: $body-color;
 }
 
 img {
@@ -40,6 +43,16 @@ a {
 	color: $dot-color;
 }
 
+.container {
+	max-width: 1100px;
+	margin: auto;
+}
+
+.read-more {
+	font-size: 1.6em;
+	text-decoration: underline;
+}
+
 section:not(.main-slider) {
 	@media #{$phone} {
 		padding: 0 40px;
@@ -55,6 +68,10 @@ main {
 }
 
 // HEADER
+.header {
+	background-color: #fff;
+}
+
 .header-inner {
 	border-bottom: 1px solid #eaeaea;
 	@media #{$phone} {
@@ -177,9 +194,10 @@ main {
 }
 
 // MAIN SLIDER
-.main-slider {
+.main-slider-container {
 	padding: 25px 0;
 	background-color: #000;
+	font-size: 10px;
 	> .swiper-container {
 		max-width: 1500px;
 	}
@@ -202,9 +220,11 @@ main {
 	transition: opacity ease-out .4s;
 	.name {
 		color: #fff;
+		font-size: 1.6em;
 	}
 	.theme {
 		color: $red-dark;
+		font-size: 1.6em;
 	}
 }
 
@@ -277,6 +297,35 @@ main {
 	margin-top: 50px;
 	> p {
 		margin-top: 40px;
+	}
+}
+
+// LIST PAGE
+.articles-list {
+	font-size: 10px;
+	margin-top: 15px;
+}
+
+article {
+	padding: 15px 15px 50px;
+	background-color: #fff;
+	border: 1px solid #eaeaea;
+	+ article {
+		margin-top: 30px;
+	}
+	h1 {
+		font-size: 2.6em;
+		margin-bottom: 15px;
+		> span {
+			color: $red-dark;
+		}
+	}
+	section {
+		padding: 0 25px;
+		margin-top: 30px;
+	}
+	p {
+		margin-bottom: 10px;
 	}
 }
 
