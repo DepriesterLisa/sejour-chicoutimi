@@ -103,9 +103,8 @@ main {
 		@media #{$phone} {
 		  flex: 1;
 		}
-		> img { 
-			margin: auto;
-		}
+		> a { display: block; }
+		> img { margin: auto; }
 	}
 }
 
@@ -169,7 +168,7 @@ main {
 	}
 	> ul {
 		display: flex;
-		max-width: 550px;
+		max-width: 1200px;
 		margin: auto;
 		list-style-type: none;
 		text-align: center;
@@ -308,12 +307,14 @@ main {
 .introduction {
 	text-align: center;
 	font-size: 10px;
-	max-width: 900px;
+	max-width: 1200px;
 	margin-top: 50px;
 	margin-left: auto;
 	margin-right: auto;
 	> p {
-		margin-top: 40px;
+		text-align: justify;
+		&:first-of-type { margin-top: 40px; }
+		+ p { margin-top: 10px; }
 	}
 }
 
@@ -342,7 +343,31 @@ article {
 		margin-top: 30px;
 	}
 	p {
-		&.introduction-article { margin-bottom: 10px; }
+		&.introduction-article { 
+			margin-bottom: 10px;
+			overflow: hidden;
+			position: relative;
+			line-height: 2em;
+			max-height: 2em * 3; // 3 is the max line number to display.
+			padding-right: 1em;
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+			&:before {
+				content: "...";
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				right: 0;
+				width: 1em;
+				height: 1em;
+				margin-top: 0.2em;
+				background-color: #fff;
+			}
+		}
 		&:last-child { margin-bottom: 0; }
 
 		+ p { margin-top: 20px; }
@@ -351,7 +376,9 @@ article {
 			text-transform: uppercase;
 			display: block;
 			font-weight: 700;
-			// font-size: 1.8 / 1.4+em;
+			margin-top: 40px;
+			margin-bottom: 10px;
+			font-size: 2.2 / 1.4+em;
 		}
 	}
 }
