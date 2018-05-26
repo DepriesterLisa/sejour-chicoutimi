@@ -1,8 +1,7 @@
 $text-color: #707070;
-$dot-color: #f02e27;
 
-$red-dark: #dc3734;
-$red-light: #e35f5d;
+$dark-color: #F69220;
+$light-color: #FFAA2A;
 
 $body-color: #f7f5f5;
 $footer-color: #282828;
@@ -41,7 +40,7 @@ a {
 }
 
 .dot {
-	color: $dot-color;
+	color: $dark-color;
 }
 
 .container {
@@ -195,7 +194,7 @@ main {
 		  }
 		}
 		&:hover {
-			color: $red-light;
+			color: $light-color;
 		}
 	}
 	a {
@@ -205,7 +204,7 @@ main {
 		}
 	}
 	.current-link {
-		color: $red-dark;
+		color: $dark-color;
 	}
 }
 
@@ -239,7 +238,7 @@ main {
 		font-size: 1.6em;
 	}
 	.theme {
-		color: $red-dark;
+		color: $dark-color;
 		font-size: 1.6em;
 	}
 }
@@ -334,7 +333,7 @@ article {
 		font-size: 2.6em;
 		margin-bottom: 15px;
 		> span {
-			color: $red-dark;
+			color: $dark-color;
 		}
 	}
 	section {
