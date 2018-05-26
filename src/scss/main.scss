@@ -39,6 +39,12 @@ a {
 	color: inherit;
 }
 
+.link {
+	color: $dark-color;
+	text-decoration: underline;
+	display: block;
+}
+
 .dot {
 	color: $dark-color;
 }
@@ -47,6 +53,20 @@ a {
 	max-width: 1200px;
 	width: 100%; // Fix flexbox pb
 	margin: auto;
+}
+
+.title-paragraph {
+	text-transform: uppercase;
+	display: block;
+	font-weight: 700;
+	margin-top: 40px;
+	margin-bottom: 10px;
+	font-size: 2.2 / 1.4+em;
+}
+
+.title-useful-links {
+	@extend .title-paragraph;
+	font-size: 1.6 / 1.4+em;
 }
 
 .read-more {
@@ -346,15 +366,6 @@ article {
 		&:last-child { margin-bottom: 0; }
 
 		+ p { margin-top: 20px; }
-
-		> .title-paragraph {
-			text-transform: uppercase;
-			display: block;
-			font-weight: 700;
-			margin-top: 40px;
-			margin-bottom: 10px;
-			font-size: 2.2 / 1.4+em;
-		}
 	}
 	ul {
 		padding-left: 40px;
