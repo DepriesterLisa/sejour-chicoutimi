@@ -84,7 +84,7 @@ a {
 }
 
 
-$header-mobile-height: 96px;
+$header-mobile-height: 75px;
 main {
 	display: flex;
 	flex-direction: column;
@@ -354,23 +354,40 @@ main {
 	}
 }
 
-// LIST PAGE
-.articles-list {
+// LIST PAGE & ARTICLES
+.articles-list,
+.article-section {
 	font-size: 10px;
 	margin-top: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
+
+
 
 article {
 	padding: 15px 15px 50px;
 	background-color: #fff;
 	border: 1px solid #eaeaea;
 	box-sizing: border-box;
-	+ article {
-		margin-top: 30px;
+	min-width: 0; // Fix flex pb.
+	flex-basis: calc(50% - 20px);
+	margin-bottom: 20px;
+	@media #{$phone} {
+		flex-basis: auto;
+	}
+	.article-section & { 
+		flex-basis: auto; 
+		margin-bottom: 0;
 	}
 	h1 {
 		font-size: 2.6em;
 		margin-bottom: 15px;
+		text-align: left;
+		@media #{$phone} {
+			font-size: 2em;
+		}
 		> span {
 			color: $dark-color;
 		}
