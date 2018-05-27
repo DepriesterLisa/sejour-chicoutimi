@@ -133,8 +133,12 @@ main {
 	display: none;
 	width: 40px;
 	height: 30px;
-	position: relative;
 	cursor: pointer;
+	position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    left: 20px;
 	@media #{$phone} {
 	  display: block;
 	}
@@ -226,9 +230,11 @@ main {
 
 	.current-link {
 		.homepage &,
-		.articles-list & {
-			padding: 15px 0 15px 20px;
-			display: block;
+		.articles & {
+			@media #{$phone} {
+				padding: 15px 0 15px 20px;
+				display: block;
+			}
 		}
 	}
 		
