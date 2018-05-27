@@ -217,13 +217,21 @@ main {
 			color: $light-color;
 		}
 	}
-	a,
-	.current-link {
+	a {
 		@media #{$phone} {
 			padding: 15px 0 15px 20px;
 			display: block;
 		}
 	}
+
+	.current-link {
+		.homepage &,
+		.articles-list & {
+			padding: 15px 0 15px 20px;
+			display: block;
+		}
+	}
+		
 	.current-link {
 		color: $dark-color;
 	}
