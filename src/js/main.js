@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-
+console.log('test');
 	var mySwiper = new Swiper ('.main-slider', {
 		// Optional parameters
 		loop: true,
@@ -19,6 +19,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		// Optional parameters
 		loop: true,
 		slidesPerView: 1,
+		autoHeight: true,
 		navigation: {
 			nextEl: '.swiper-button-next',
 			prevEl: '.swiper-button-prev',
