@@ -43,7 +43,7 @@ gulp.task('js', function() {
 
 // Configure image stuff.
 gulp.task('images', function () {
-  return gulp.src('src/img/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('src/img/**/*.+(png|jpg|gif|svg|JPG|PNG)')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img'));
 });
