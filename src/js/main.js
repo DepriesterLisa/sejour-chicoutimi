@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-console.log('test');
 	var mySwiper = new Swiper ('.main-slider', {
 		// Optional parameters
 		loop: true,
